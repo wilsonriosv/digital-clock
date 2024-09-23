@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clock"></div>
+    
+    <script>
+        // Get the clock element
+        const clockElement = document.getElementById('clock');
+        const add_zero = x => x<10 ? '0'+x : x;
+        
+        // Update the clock every second
+        function showTime() {
+            // Get the current time
+            const now = new Date();
+            const hour = add_zero(now.getHours());
+            const minute = add_zero(now.getMinutes());
+            const second = add_zero(now.getSeconds());
+            // Update the clock element with the formatted time
+            clockElement.innerText=`${hour}:${minute}:${second}`;
+        };
+        
+        // Start the timer 
+        setInterval(showTime, 1000);
+        
+    </script>
+
+</body>
+</html>
+
